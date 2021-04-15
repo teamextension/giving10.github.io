@@ -6,7 +6,7 @@ layout: default
 			<div class="container">
 				<h1><i>CONTACT</i> PAGE</h1>
 				<ul class="breadcrumbs">
-					<li><a href="index.html" title="">Home</a></li>
+					<li><a href="/index.html" title="">Home</a></li>
 					<li>CONTACT</li>
 				</ul>
 			</div>
@@ -19,10 +19,11 @@ layout: default
 						<div class="col-lg-8 col-md-12">
 							<div class="modern-title"><h3>Please fill the form below, we will respond soon.</h3> </div>
 							<div id="message"></div>
-							<form class="form contact" method="post" action="contact.php" name="contactform" id="contactform">
+							<form class="form contact" method="post" name="contact-form" id="contact-form">
 								<div class="field"><label>Name</label> <input name="name" id="name" type="text"  /></div>
 								<div class="field"><label>Email</label> <input name="email" id="email" type="email"  /></div>
-								<div class="field"><label>Message</label> <textarea name="comments" id="comments"></textarea></div>
+								<div class="field"><label>Subject</label> <input name="subject" id="subject" type="text"  /></div>
+								<div class="field"><label>Message</label> <textarea name="message" id="comments"></textarea></div>
 								<button type="submit" id="submit" class="btn style3">Send Message</button>
 							</form>
 						</div>
@@ -83,6 +84,35 @@ layout: default
 			  position:myLatLng,
 			  map:map,
 			  icon:image
+			});
+
+
+			$('#contact-form').on('submit',function(e){
+				//optional validation code here
+
+				e.preventDefault();
+
+				$.ajax({
+					url: "https://script.google.com/a/macros/teamextension.com/s/AKfycby1D3PNuArpVSvF9_ylr3npXPldUI_ySwaP0rvRCWqMVDwvbwWfXQLCneVT8Xasz0LXGg/exec",
+					method: "POST",
+					dataType: "json",
+					data: $("#contact-form").serialize(),
+					success: function(response) {
+
+						if(response.result == "success") {
+							$('#contact-form')[0].reset();
+							alert('Thank you for contacting us.');
+							return true;
+						}
+						else {
+							alert("Something went wrong. Please try again.")
+						}
+					},
+					error: function() {
+
+						alert("Something went wrong. Please try again.")
+					}
+				})
 			});
 		});
 	</script>
