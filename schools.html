@@ -1,12 +1,18 @@
 ---
 layout: default
+title: Schools
+pagination:
+ enabled: true
+ category: schools
+ indexpage: 'schools'
+ permalink: '/schools/:num.html'
 ---
 
 	<div class="pagetop">
 			<div class="container">
 				<h1><i>In</i> Schools</h1>
 				<ul class="breadcrumbs">
-					<li><a href="index.html" title="">Home</a></li>
+					<li><a href="/index.html" title="">Home</a></li>
 					<li>Schools</li>
 				</ul>
 			</div>
@@ -19,48 +25,68 @@ layout: default
 						<div class="col-12">
 							<div class="shelter-blog">
 								<div class="row">
+									{% for post in paginator.posts %}
 									<div class="col-4">
 										<div class="simple-post">
 											<div class="simple-post-img">
-												<a href="school-sunnyside.html" title=""><img src="images/projects/sunnyside-environmental-school.jpg" alt="" /></a>
+												<a href="{{post.url}}" title=""><img src="{{ post.post-image}}" alt="" /></a>
 											</div>
 											<div class="simple-post-detail">
 												<ul class="meta">
-													<li>?</li>
+													<li>By <a href="" title>{{ post.post-author | default: site.author}}</a></li>
+													<li>{{ post.date | date: "%b %-d, %Y" }}</li>
 												</ul>
-												<h3><a href="school-sunnyside.html" title="">Sunnyside Environmental School</a></h3>
-												<p>The Sunnyside Environmental School in Oregon incorporated GIving $10 into the school curriculum, enabling students to do research on poverty alleviation and make recommendations on projects worthy of our support. Here, the class engages in a conference call with Giving $10 President Adam Roberts to discuss their findings.</p>
-												<a class="readmore" href="school-sunnyside.html" title="">Read More</a>
+												<h3><a href="{{post.url}}" title="">{{ post.post-title }}</a></h3>
+												<p>{{ post.post-summary }}</p>
+												<a class="readmore" href="{{ post.url | relative_url }}" title="{{ post.post-title | escape }}">Read More</a>
 											</div>
 										</div><!-- Simple Post -->
 									</div>
-									<div class="col-4">
-										<div class="simple-post">
-											<div class="simple-post-img"><img src="http://placehold.it/370x270" alt="" /></div>
-											<div class="simple-post-detail">
-												<ul class="meta">
-													<li>March 2006</li>
-												</ul>
-												<h3><a href="pdf/school-connecticut2006march.pdf" title="">Wheeler High School</a></h3>
-												<p>Connecticut Students Walk to Raise Money for Giving $10. Community service group asks for small donations to make big changes.</p>
-												<a class="readmore" href="pdf/school-connecticut2006march.pdf" title="">Read More</a>
-											</div>
-										</div><!-- Simple Post -->
-									</div>
+									{% endfor %}
 								</div>
 							</div>
+							<div class="row">
+
+								<div class="shelter-pagination">
+									<ul class="pagination">
+										<li>
+											{% if paginator.previous_page %}
+											<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Previous</a>
+											{% else %}
+											<a class="previous">Previous</a>
+											{% endif %}
+										</li>
+										{% for page in (1..paginator.total_pages) %}
+										{% if page == paginator.page %}
+										<li><a class="current">{{ page }}</a></li>
+										{% elsif page == 1 %}
+										<li><a href="{{ paginator.first_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+										{% else %}
+										<li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+										{% endif %}
+										{% endfor %}
+
+										<li>
+											{% if paginator.next_page %}
+											<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>
+											{% else %}
+											<a class="next ">Next</a>
+											{% endif %}
+										</li>
+									</ul>
+								</div>
 
 
-
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/simpleLightbox.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/simpleLightbox.min.js"></script>
+	<script src="/js/script.js"></script>
 
 
 

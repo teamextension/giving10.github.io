@@ -1,12 +1,18 @@
 ---
 layout: default
+title: News
+pagination:
+ enabled: true
+ category: news
+ indexpage: 'news'
+ permalink: '/news/:num.html'
 ---
 
 	<div class="pagetop">
 			<div class="container">
 				<h1><i>News</i></h1>
 				<ul class="breadcrumbs">
-					<li><a href="index.html" title="">Home</a></li>
+					<li><a href="/index.html" title="">Home</a></li>
 					<li>News</li>
 				</ul>
 			</div>
@@ -16,60 +22,65 @@ layout: default
 			<div class="block">
 				<div class="container">
 					<div class="row">
-						<div class="col-12">
-							<div class="shelter-blog">
-								<div class="row">
-									<div class="col-4">
-										<div class="simple-post">
-											<div class="simple-post-img"><img src="http://placehold.it/370x270" alt="" /></div>
-											<div class="simple-post-detail">
-												<ul class="meta">
-													<li>eTown Radio</li>
-													<li>October 18, 2011</li>
-												</ul>
-												<h3><a href="#" title="">Giving $10 receives E-Chievement Award</a></h3>
-												<p>Adam Roberts and Giving $10 received the eTown E-Chievement award in a special event in Boulder, CO.</p>
-												<a class="readmore" href="#" title="">Read More</a>
-											</div>
-										</div><!-- Simple Post -->
-									</div>
-									<div class="col-4">
-										<div class="simple-post">
-											<div class="simple-post-img"><img src="http://placehold.it/370x270" alt="" /></div>
-											<div class="simple-post-detail">
-												<ul class="meta">
-													<li>By <a href="#" title="">...</a></li>
-													<li>...</li>
-												</ul>
-												<h3><a href="#" title="">...</a></h3>
-												<p>...</p>
-												<a class="readmore" href="#" title="">Read More</a>
-											</div>
-										</div><!-- Simple Post -->
-									</div>
+						{% for post in paginator.posts %}
+							<div class="col-4">
+							<div class="simple-post">
+								<div class="simple-post-img"><img src="{{ post.post-image }}" alt="" /></div>
+								<div class="simple-post-detail">
+									<ul class="meta">
+										<li>By <a href="" title>{{ post.post-author | default: site.author }}</a></li>
+										<li>{{ post.date | date: "%b %-d, %Y" }}</li>
+									</ul>
+									<h3><a href="{{ post.url | relative_url }}" title="">{{ post.post-title }}</a></h3>
+									<p>{{ post.excerpt }}</p>
+									<a class="readmore" href="{{ post.url | relative_url }}" title="{{ post.post-title | escape }}">Read More</a>
 								</div>
-							</div>
-
-
-
-							<div class="shelter-pagination">
-								<ul class="pagination">
-									<li> <a href="#" title=""> Previous </a> </li>
-									<li><a class="current" href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">5</a></li>
-									<li> <a href="#" title=""> Next</a> </li>
-								</ul>
-							</div><!-- Shelter Pagination -->
-
+							</div><!-- Simple Post -->
 						</div>
+						{% endfor %}
+					</div>
+					<div class="row">
+
+						<div class="shelter-pagination">
+							<ul class="pagination">
+								<li>
+									{% if paginator.previous_page %}
+									<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Previous</a>
+									{% else %}
+									<a class="previous">Previous</a>
+									{% endif %}
+								</li>
+								{% for page in (1..paginator.total_pages) %}
+								{% if page == paginator.page %}
+								<li><a class="current">{{ page }}</a></li>
+								{% elsif page == 1 %}
+								<li><a href="{{ paginator.first_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+								{% else %}
+								<li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+								{% endif %}
+								{% endfor %}
+
+								<li>
+									{% if paginator.next_page %}
+									<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>
+									{% else %}
+									<a class="next ">Next</a>
+									{% endif %}
+								</li>
+							</ul>
+						</div>
+
+
+						<!--
+                          Showing buttons to move to the next and to the previous list of posts (pager buttons).
+                        -->
 					</div>
 				</div>
 			</div>
+
 		</section>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/simpleLightbox.min.js"></script>
-	<script src="js/script.js"></script>
+
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/simpleLightbox.min.js"></script>
+	<script src="/js/script.js"></script>

@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Giving $10
 ---
 
 	<section>
@@ -84,7 +85,7 @@ layout: default
 										<div class="modern-cause-img">
 											<img src="http://placehold.it/270x249" alt="" />
 										</div>
-										<h4><a href="project-2012-01.html" title="">Hôpital Albert Schweitzer Haiti</a></h4>
+										<h4><a href="delete/project-2012-01.html" title="">Hôpital Albert Schweitzer Haiti</a></h4>
 										<span>Donated: <i>$2,250</i></span>
 										<a class="btn round" href="donate.html" title="">Donate Now</a>
 									</div><!-- Recent Cause -->
@@ -312,6 +313,43 @@ layout: default
 				</div>
 			</div>
 		</section>
+
+<section>
+	<div class="block">
+		<ul>
+			{% for post in paginator.posts %}
+			<li>
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		{% assign projects = site.paginator | where: "type", "News" %}
+		{% for post in projects %}
+		<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+		<p class="author">
+			<span class="date">{{ post.date }}</span>
+		</p>
+		<p>{{ post.type }}</p>
+		<div class="content">
+			{{ post.content }}
+		</div>
+		{% endfor %}
+
+		<div class="pagination">
+			{% if paginator.previous_page %}
+			<a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+			{% else %}
+			<span class="previous">Previous</span>
+			{% endif %}
+			<span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+			{% if paginator.next_page %}
+			<a href="{{ paginator.next_page_path }}" class="next">Next</a>
+			{% else %}
+			<span class="next ">Next</span>
+			{% endif %}
+		</div>
+	</div>
+</section>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/slick.min.js"></script>
