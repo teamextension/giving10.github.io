@@ -7,13 +7,12 @@
 
 {%- include header.html -%}
 
-{% assign p = paginator.posts.first %}
 <div class="pagetop">
     <div class="container">
-        <h1>{{p.project-year}} <i>Project Photos</i></h1>
+        <h1>{{page.year}} <i>Project Photos</i></h1>
         <ul class="breadcrumbs">
             <li><a href="index.html" title="">Home</a></li>
-            <li>{{p.project-year}} Photos</li>
+            <li>{{page.year}} Photos</li>
         </ul>
     </div>
 </div>
@@ -24,70 +23,7 @@
                 <div class="col-12">
                     {%- include photo-year-pagination.html -%}
 
-                    <div class="shelter-team">
-                        <div class="row">
-                            {% for post in paginator.posts %}
-                            <div class="col-4">
-                                <div class="member">
-                                    <img src="{{post.post-image}}" width="370" height="319" alt=""/>
-                                    <div class="member-name">
-                                        <h4>{{post.project-month}} {{post.project-year}}</h4>
-                                        <span>
-													<i>{{post.post-title}}</i>
-													<a href="{{post.url}}" title="">Read More</a>
-												</span>
-                                    </div>
-                                </div><!-- Member -->
-                            </div>
-                            {% endfor %}
-
-                        </div>
-                    </div><!-- Shelter Team -->
-
-
                     {{ content }}
-
-                    <!-- Pagination -  only show if more than 1 page -->
-                    {% if paginator.total_pages > 1 %}
-                    <div class="row">
-
-                        <div class="shelter-pagination">
-                            <ul class="pagination">
-                                <li>
-                                    {% if paginator.previous_page %}
-                                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Previous</a>
-                                    {% else %}
-                                    <a class="previous">Previous</a>
-                                    {% endif %}
-                                </li>
-                                {% for page in (1..paginator.total_pages) %}
-                                {% if page == paginator.page %}
-                                <li><a class="current">{{ page }}</a></li>
-                                {% elsif page == 1 %}
-                                <li><a href="{{ paginator.first_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
-                                {% else %}
-                                <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
-                                {% endif %}
-                                {% endfor %}
-
-                                <li>
-                                    {% if paginator.next_page %}
-                                    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>
-                                    {% else %}
-                                    <a class="next ">Next</a>
-                                    {% endif %}
-                                </li>
-                            </ul>
-                        </div>
-
-
-
-
-                        <!--
-                          Showing buttons to move to the next and to the previous list of posts (pager buttons).
-                        -->
-                    </div>
-                    {% endif %}
 
                     {%- include photo-year-pagination.html -%}
                 </div>
