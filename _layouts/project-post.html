@@ -29,7 +29,7 @@ layout: post-default
 							<div class="cat-box">{{page.project-cause}}</div>
 							<h1 class="post-title">{{page.post-title}}</h1>
 							<ul class="meta">
-								<li>By {{ site.author }}</li>
+								<li>By {{ page.post-author | default: site.author }}</li>
 								<li>{{page.project-date}}</li>
 							</ul>
 							{%- include socials.html -%}
