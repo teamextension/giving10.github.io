@@ -4,7 +4,7 @@ date:   2021-04-03 16:58:50 -0400
 categories: news
 
 post-author: eTown Radio
-post-image: http://placehold.it/370x270
+post-image: /images/eTown_Logo.jpg
 post-title: Giving $10 receives E-Chievement Award
 post-summary: Adam Roberts and Giving $10 received the eTown E-Chievement award in a special event in Boulder, CO.
 
