@@ -25,15 +25,23 @@ pagination:
 						{% for post in paginator.posts %}
 							<div class="col-4">
 							<div class="simple-post">
-								<div class="simple-post-img"><img src="{{ post.post-image }}" alt="" /></div>
+								<div class="simple-post-img"><img src="{{ post.post-image }}" alt="" style="max-height: 317px"/></div>
 								<div class="simple-post-detail">
 									<ul class="meta">
 										<li>By <a href="" title>{{ post.post-author | default: site.author }}</a></li>
 										<li>{{ post.date | date: "%b %-d, %Y" }}</li>
 									</ul>
-									<h3><a href="{{ post.url | relative_url }}" title="">{{ post.post-title }}</a></h3>
-									<p>{{ post.excerpt }}</p>
-									<a class="readmore" href="{{ post.url | relative_url }}" title="{{ post.post-title | escape }}">Read More</a>
+									{% if post.post-link %}
+									 <h3><a href="{{ post.post-link }}" title="">{{ post.post-title }}</a></h3>
+									{% else %}
+									 <h3><a href="{{ post.url | relative_url }}" title="">{{ post.post-title }}</a></h3>
+									{% endif %}
+									<p>{{ post.post-summary }}</p>
+									{% if post.post-link %}
+									 <a class="readmore" href="{{ post.post-link }}" title="{{ post.post-title | escape }}">Read More</a>
+									{% else %}
+									 <a class="readmore" href="{{ post.url | relative_url }}" title="{{ post.post-title | escape }}">Read More</a>
+									{% endif %}
 								</div>
 							</div><!-- Simple Post -->
 						</div>
