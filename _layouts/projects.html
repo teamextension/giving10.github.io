@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-{%- include head.html -%}
+{%- include relative-head.html -%}
 
 <body>
 
-{%- include header.html -%}
+{%- include relative-header.html -%}
 
 {% assign p = paginator.posts.first %}
 <div class="pagetop">
@@ -95,13 +95,13 @@
     </div>
 </section>
 
-{%- include footer.html -%}
+{%- include relative-footer.html -%}
 
 </body>
 
 </html>
 
 
-<script src="js/jquery.min.js"></script>
-<script src="js/simpleLightbox.min.js"></script>
-<script src="js/script.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/simpleLightbox.min.js"></script>
+<script src="/js/script.js"></script>
