@@ -25,7 +25,7 @@ pagination:
 						{% for post in paginator.posts %}
 							<div class="col-4">
 							<div class="simple-post">
-								<div class="simple-post-img"><img src="{{ post.post-image }}" alt="" style="max-height: 317px"/></div>
+								<div class="simple-post-img"><img src="{{ post.post-image }}" alt=""/></div>
 								<div class="simple-post-detail">
 									<ul class="meta">
 										<li>By <a href="" title>{{ post.post-author | default: site.author }}</a></li>
