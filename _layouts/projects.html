@@ -38,7 +38,10 @@
                                     </div>
                                     <h3><a href="{{ post.url }}" title="">{{ post.post-title }}</a></h3>
                                     <p>{{post.post-summary}} <a href="{{ post.url }}">Read more.</a></p>
-                                    <p>For more information: <a href="{{ post.post-more-info-url }}">{{ post.post-more-info-url | remove: "http://" }}</a></p>
+
+                                    {% if post.post-more-info-url %}
+                                      <p>For more information: <a href="{{ post.post-more-info-url }}">{{ post.post-more-info-url | remove: "http://" }}</a></p>
+                                    {% endif %}
                                 </div><!-- Creative Cause -->
                             </div>
                             {% endfor %}
