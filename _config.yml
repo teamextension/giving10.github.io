@@ -43,6 +43,7 @@ exclude:
 pagination:
   enabled: true
   per_page: 10
+  sort_field: 'date'
 
 # Exclude from processing.
 # The following items will not be processed, by default.
