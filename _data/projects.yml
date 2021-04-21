@@ -15,3 +15,15 @@
 - name: projects-2009
   url: /projects-2009.html
   year: 2009
+
+- name: projects-2008
+  url: /projects-2008.html
+  year: 2008
+
+- name: projects-2007
+  url: /projects-2007.html
+  year: 2007
+
+- name: projects-2006
+  url: /projects-2006.html
+  year: 2006
