@@ -36,8 +36,13 @@
                                     </div>
                                     <div class="cause-loc"><span>{{ post.project-cause }}</span> <span>{{ post.project-location }}</span>
                                     </div>
-                                    <h3><a href="{{ post.url }}" title="">{{ post.post-title }}</a></h3>
-                                    <p>{{post.post-summary}} <a href="{{ post.url }}">Read more.</a></p>
+                                    {% if post.content != "" %}
+                                     <h3><a href="{{ post.url }}" title="">{{ post.post-title }}</a></h3>
+                                     <p>{{post.post-summary}} <a href="{{ post.url }}">Read more.</a></p>
+                                    {% else %}
+                                     <h3>{{ post.post-title }}</h3>
+                                     <p>{{post.post-summary}}</p>
+                                    {% endif %}
 
                                     {% if post.post-more-info-url %}
                                       <p>For more information: <a href="{{ post.post-more-info-url }}">{{ post.post-more-info-url | remove: "http://" }}</a></p>
