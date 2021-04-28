@@ -15,3 +15,27 @@
 - name: photos-2009
   url: /photos-2009.html
   year: 2009
+
+- name: photos-2008
+  url: /photos-2008.html
+  year: 2008
+
+- name: photos-2007
+  url: /photos-2007.html
+  year: 2007
+
+- name: photos-2006
+  url: /photos-2006.html
+  year: 2006
+
+- name: photos-2005
+  url: /photos-2005.html
+  year: 2005
+
+- name: photos-2004
+  url: /photos-2004.html
+  year: 2004
+
+- name: photos-2003
+  url: /photos-2003.html
+  year: 2003
