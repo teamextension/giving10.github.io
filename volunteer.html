@@ -26,6 +26,11 @@ title: Volunteers - Giving $10
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-12">
+										<div id="success-message" style="display: none" class="alert alert-info" role="alert">
+											<h5 class="alert-heading">Thank you for contacting us.</h5>
+											<hr>
+											<p class="mb-0">You are very important to us, all information received will always remain confidential. We will contact you as soon as we review your message.</p>
+										</div>
 										<div class="title left">
 											<span>The world needs you</span>
 											<h2><i>BECOME A</i> VOLUNTEER</h2>
@@ -71,7 +76,7 @@ title: Volunteers - Giving $10
 		// 	  icon:image
 		// 	});
 		// });
-
+		let showMessage = false
 
 		$('#submit').click(function () {
 			console.log('A')
@@ -96,6 +101,11 @@ title: Volunteers - Giving $10
 				$name.val('')
 				$phone.val('')
 				$comments.val('')
+
+				showMessage = true
+				if(showMessage) {
+					$('#success-message').show()
+				}
 			}
 		})
 

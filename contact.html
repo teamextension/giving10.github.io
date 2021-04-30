@@ -18,6 +18,14 @@ title: Contact - Giving $10
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 col-md-12">
+							<div id="success-message" style="display: none" class="alert alert-info" role="alert">
+								<h5 class="alert-heading">Thank you for contacting us.</h5>
+								<hr>
+								<p class="mb-0">You are very important to us, all information received will always remain confidential. We will contact you as soon as we review your message.</p>
+							</div>
+						</div>
+
+						<div class="col-lg-8 col-md-12">
 							<div class="modern-title"><h3>Please fill the form below, we will respond soon.</h3> </div>
 							<div id="message"></div>
 							<div class="form contact" name="contact-form" id="contact-form">
@@ -68,7 +76,7 @@ title: Contact - Giving $10
 	<script src="js/script.js"></script>
 
 	<script>
-
+		let showMessage = false
 		$('#submit').click(function () {
 
 			let $email = $('#email');
@@ -92,6 +100,11 @@ title: Contact - Giving $10
 				$name.val('')
 				$subject.val('')
 				$comments.val('')
+
+				showMessage = true
+				if(showMessage) {
+					$('#success-message').show()
+				}
 			}
 		})
 
