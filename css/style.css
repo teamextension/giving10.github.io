@@ -78,7 +78,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /*=============== Fonts ===================*/
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 /*=============== General Styling ===================*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License:none (public domain)
 */
@@ -92,8 +92,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video{
     margin:0;
@@ -104,7 +104,7 @@ time, mark, audio, video{
     vertical-align:baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section{display:block}
 body{line-height:1.6}
 blockquote, q{quotes:none}
@@ -302,8 +302,8 @@ img{float:left;height:auto}
 :-ms-input-placeholder,
 :-ms-textarea-placeholder{opacity:1}
 input[type="file"]{visibility:hidden;display:none}
-input[type="text"], 
-input[type="email"], input[type="file"] ~ label, 
+input[type="text"],
+input[type="email"], input[type="file"] ~ label,
 input[type="password"], textarea{
     background:#f3f3f3;
     border:0 none;
@@ -342,7 +342,7 @@ a,
 .shelter-search form,
 .creative-navs span:before,
 .slick-dots li button,
-.shelter-event:before, 
+.shelter-event:before,
 .shelter-event:after,
 .shelter-logos li,
 .shelter-gallery .row > div a img,
@@ -707,12 +707,12 @@ body.menu-opened .fullpage-header .sideheader{left:85px}
     -webkit-transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);
     -moz-transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);
     -o-transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);
-    transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);/* easeOutQuart */    
+    transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);/* easeOutQuart */
     -webkit-box-shadow:0 0 7px rgba(0,0,0,0.1);
     -moz-box-shadow:0 0 7px rgba(0,0,0,0.1);
     -ms-box-shadow:0 0 7px rgba(0,0,0,0.1);
     -o-box-shadow:0 0 7px rgba(0,0,0,0.1);
-    box-shadow:0 0 7px rgba(0,0,0,0.1)    
+    box-shadow:0 0 7px rgba(0,0,0,0.1)
 }
 .menu-opened .sideheader{right:0}
 .menu-btn{
@@ -1257,7 +1257,7 @@ nav ul ul li:hover > a{color:#FFF}
     -moz-border-radius:3px;
     -ms-border-radius:3px;
     -o-border-radius:3px;
-    border-radius:3px;   
+    border-radius:3px;
 }
 .zip-find button{
     display:inline-block;
@@ -1410,7 +1410,7 @@ nav ul ul li:hover > a{color:#FFF}
     overflow:hidden;
 }
 .gray .shelter-event{ background:#FFF }
-.shelter-event:before, 
+.shelter-event:before,
 .shelter-event:after{
     content:"";
     width:80px;
@@ -1468,7 +1468,7 @@ nav ul ul li:hover > a{color:#FFF}
 .shelter-event span{
     font-size:12px;
     font-family:roboto;
-} 
+}
 .shelter-event .social-links{
     position:absolute;
     left:0;
@@ -1900,7 +1900,7 @@ nav ul ul li:hover > a{color:#FFF}
     -webkit-transition-timing-function:cubic-bezier(0.455, 0.030, 0.515, 0.955);
     -moz-transition-timing-function:cubic-bezier(0.455, 0.030, 0.515, 0.955);
     -o-transition-timing-function:cubic-bezier(0.455, 0.030, 0.515, 0.955);
-    transition-timing-function:cubic-bezier(0.455, 0.030, 0.515, 0.955);/* easeInOutQuad */    
+    transition-timing-function:cubic-bezier(0.455, 0.030, 0.515, 0.955);/* easeInOutQuad */
 }
 .creative-cause:hover .btn{
     opacity:1;
@@ -2782,7 +2782,7 @@ nav ul ul li:hover > a{color:#FFF}
     left:10px;
     bottom:10px;
 }
-.child-name h3, 
+.child-name h3,
 .child-name span{
     margin:0 0 1px;
     position:relative;
@@ -2916,7 +2916,7 @@ nav ul ul li:hover > a{color:#FFF}
 .pagetop{
     float:left;
     width:100%;
-    background:url(../images/pagetop.jpg) no-repeat scroll 0 0 / cover transparent;
+    background:url(/images/pagetop.jpg) no-repeat scroll 0 0 / cover transparent;
     padding-top:110px;
     text-align:center;
     padding-bottom:110px;
@@ -2932,7 +2932,7 @@ header.transparent ~ .pagetop{padding-top:190px}
     width:100%;
     height:100%;
     background:#2e2e2e;
-    opacity:0.95;
+    opacity:0.25;
     z-index:-1;
 }
 .pagetop h1{
@@ -3539,7 +3539,7 @@ blockquote:before{
     float:left;
     width:100%;
 }
-.simple-form > form input, 
+.simple-form > form input,
 .simple-form > form textarea{
     background:#e6e9eb;
     border:0 none;
@@ -3868,7 +3868,7 @@ ul.donation-figures li:before{display:none}
     font-weight:600;
     color:#333;
     line-height:1;
-}   
+}
 .donation-amount textarea{
     min-height:100px;
     text-align:center;
@@ -3923,12 +3923,12 @@ ul.donation-figures li:before{display:none}
     -webkit-transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1.000);
     -moz-transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1.000);
     -o-transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1.000);
-    transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1.000);/* easeInOutCubic */    
+    transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1.000);/* easeInOutCubic */
     -webkit-transition-delay:0.4s;
     -moz-transition-delay:0.4s;
     -ms-transition-delay:0.4s;
     -o-transition-delay:0.4s;
-    transition-delay:0.4s;  
+    transition-delay:0.4s;
 }
 .active .shelter-fullpage-title{
     opacity:1;
@@ -3955,7 +3955,7 @@ ul.donation-figures li:before{display:none}
     -webkit-transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1.000);
     -moz-transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1.000);
     -o-transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1.000);
-    transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1.000);/* easeInOutCubic */    
+    transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1.000);/* easeInOutCubic */
     -webkit-transition-delay:0.5s;
     -moz-transition-delay:0.5s;
     -ms-transition-delay:0.5s;
